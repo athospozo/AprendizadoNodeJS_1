@@ -1,12 +1,14 @@
-import { app } from "./app.js"
+import { app } from "./app.js";
 
-const host = '0.0.0.0' //garante que seja acessivel para frontends
-const port = 3333 //ou 3000
+const host = "0.0.0.0"; //garante que seja acessivel para frontends
+const port = 3333; //ou 3000
 
-app.listen({
+app
+  .listen({
     host,
     port,
-}).then(() => {
-    const url = `http://localhost:${port}`
-    console.log (`HTTP server running at: ${url}`)
-}) 
+  })
+  .then(() => {
+    const url = `http://localhost:${port}`;
+    console.log(`HTTP server running at: ${url}`);
+  });
