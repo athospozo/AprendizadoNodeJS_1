@@ -24,7 +24,7 @@ model Usuario {
   name     String
   email    String @unique
   passwordHash String @map("password_hash")
-  picture  String @default("")
+  photo    String @default("")
   posts    Post[]
 
   role     USER_ROLE @default(DEFAULT)

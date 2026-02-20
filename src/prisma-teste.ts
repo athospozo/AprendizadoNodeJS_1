@@ -7,7 +7,7 @@ async function main() {
         name: 'Ayrton',
         email: 'athospozoo@gmail.com',
         passwordHash: 'aleatorio',
-        picture: 'sdfghjkjhgfd',
+        photo: 'sdfghjkjhgfd',
       },
     })
 
@@ -17,7 +17,7 @@ async function main() {
     console.error('❌ Erro ao criar usuário:', error)
   } finally {
     await prisma.$disconnect()
-  }
+  }""
 }
 
 main()

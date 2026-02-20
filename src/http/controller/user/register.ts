@@ -7,19 +7,20 @@ export async function register(request: FastifyRequest, reply: FastifyReply)  {
         name: z.string().trim().min(1).max(100),
         email: z.email().max(100),
         password: z.string().trim().min(3).max(30),
-        pictures: z.string().min(2).max(100).optional(),
+        picture: z.string().min(2).max(100).optional(),
     }); 
 
-    const { name, email, password, pictures } = registerBodySchema.parse(request.body);
+    const { name, email, password, picture } = registerBodySchema.parse(request.body);
 
     const user = await prisma.usuario.create ({
         data: {
             name,
             email,
             passwordHash: password,
-            picture: pictures,
+            photo: picture ?? "",
         }
     })
+
 
     return reply.status(201).send(user);
 }
