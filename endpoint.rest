@@ -1,0 +1,12 @@
+@api-URL = "http://localhost:{{dotenv PORT}}"
+
+POST {{api-URL}}/usuario HTTP/1.1
+
+Content-Type: application/json
+
+{
+  "name": "Ayron",
+  "email": "athospzo@gmail.com",
+  "passwordHash": "12345678",
+  "picture": "sdfghjkjhgfd"
+}
