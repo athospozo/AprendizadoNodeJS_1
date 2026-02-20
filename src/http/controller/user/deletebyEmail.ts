@@ -7,7 +7,7 @@ export async function deleteUserbyEmail (request: FastifyRequest, reply: Fastify
         email: z.string().trim().min(1).max(100),
     }); 
 
-    const { email } = deleteBodySchema.parse(request.body);
+    const { email } = deleteBodySchema.parse(request.params);
 
     const user = await prisma.usuario.delete ({
         where: {

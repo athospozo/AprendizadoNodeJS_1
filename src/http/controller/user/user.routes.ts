@@ -9,7 +9,7 @@ import { readbyId } from './readUserbyId.js';
 export async function usersRoutes (app: FastifyInstance) {
     app.post('/', register)
     app.get('/', showAll)
-    app.delete('/', deleteUserbyEmail)
+    app.delete('/:email', deleteUserbyEmail)
     app.patch('/:id', patchbyId)
     app.get('/:id', readbyId)
 }

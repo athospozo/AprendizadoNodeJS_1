@@ -9,8 +9,8 @@ import { getbyIdUsers } from './getbyIdUser.js';
 export async function postRoutes (app: FastifyInstance) {
     app.post('/', register)
     app.get('/', showAll)
-    app.delete('/', deletePostbyId)
-    app.patch('/:id', patchbyId)    
+    app.delete('/:id', deletePostbyId)
+    app.patch('/:id', patchbyId)
     app.get('/usuario/:iduser', getbyIdUsers)
     app.get('/:id', readbyId)
 }

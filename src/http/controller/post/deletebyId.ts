@@ -3,19 +3,19 @@ import { prisma } from '@/libs/prisma.js'
 import type { FastifyReply, FastifyRequest } from 'fastify'
 
 export async function deletePostbyId (request: FastifyRequest, reply: FastifyReply){
-    const deleteBodySchema = z.object({
-        Id: z.number().int(),
+    const paramSchema = z.object({
+        id: z.coerce.number().int(),
     }); 
     
-    const { Id } = deleteBodySchema.parse(request.body);
+    const { id } = paramSchema.parse(request.params)
 
     const post = await prisma.post.delete ({
         where: {
-            id: Id,
+            id: id,
         }
     })
 
-    return reply.status(201).send({
+    return reply.status(200).send({
         message: "Post deletado com sucesso!",
         postDeletado: post
     })

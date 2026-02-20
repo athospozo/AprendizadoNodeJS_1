@@ -14,8 +14,8 @@ export async function patchbyId(request: FastifyRequest, reply: FastifyReply)  {
     });
 
     const PatchPostSchema = z.object({
-        titulo: z.string().trim().min(1).max(100),
-        conteudo: z.string().trim().min(1).max(1000),
+        titulo: z.string().trim().min(1).max(100).optional(),
+        conteudo: z.string().trim().min(1).max(1000).optional(),
     }); 
 
     const { id } = paramsSchema.parse(request.params)
