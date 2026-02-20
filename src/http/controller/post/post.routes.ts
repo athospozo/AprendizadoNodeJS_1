@@ -3,10 +3,12 @@ import { register } from './register.js';
 import { showAll } from './showall.js';
 import { deletePostbyId } from './deletebyId.js';
 import { patchbyId } from './patchbyId.js';
+import { readbyId } from './readPostbyId.js';
 
 export async function postRoutes (app: FastifyInstance) {
     app.post('/', register)
     app.get('/', showAll)
     app.delete('/', deletePostbyId)
     app.patch('/:id', patchbyId)    
+    app.get('/:id', readbyId)
 }

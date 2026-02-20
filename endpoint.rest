@@ -1,10 +1,10 @@
 @api-URL = http://localhost:{{$dotenv PORT}}
 
-POST {{api-URL}}/usuario HTTP/1.1
+POST {{api-URL}}/posts HTTP/1.1
 Content-Type: application/json
 
 {
-  "name": "Athos Cunha Pozo",
-  "email": "athospozoo@gmail.com",
-  "password": "12345678"
+    "titulo": "o morro dos ventos uivantes",
+    "conteudo": "dchqgevjewvfhbvjhwbfvhkebrjvbebvjhbvjhbjhwvbjhbvgrbv",
+    "Idautor": 4
 }
