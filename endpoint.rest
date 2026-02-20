@@ -1,10 +1,10 @@
 @api-URL = http://localhost:{{$dotenv PORT}}
 
-POST {{api-URL}}/usuario HTTP/1.1
+POST {{api-URL}}/posts HTTP/1.1
 Content-Type: application/json
 
 {
-  "name": "ath",
-  "email": "novo_efghhmail@gmail.com",
-  "password": "12345678"
+  "titulo": "Meu primeiro post",
+  "Conteudo": "Este é o conteúdo do meu primeiro post.",
+  "Idautor": 1
 }
